@@ -853,3 +853,115 @@ x==========x]
 [2024-05-16 05:23:11,681: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2024-05-16 05:47:28,840: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.106:8080]
+[2024-05-16 05:47:28,841: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-16 05:47:41,419: ERROR: app: Exception on / [GET]]
+Traceback (most recent call last):
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 25, in home
+    return render_template('index.html')
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\jinja2\environment.py", line 1084, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\jinja2\environment.py", line 1013, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\jinja2\environment.py", line 972, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\flask\templating.py", line 64, in get_source
+    return self._get_source_fast(environment, template)
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+[2024-05-16 05:47:41,431: INFO: _internal: 127.0.0.1 - - [16/May/2024 05:47:41] "[35m[1mGET / HTTP/1.1[0m" 500 -]
+[2024-05-16 05:47:41,463: INFO: _internal: 127.0.0.1 - - [16/May/2024 05:47:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2024-05-16 05:53:51,277: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.106:8080]
+[2024-05-16 05:53:51,277: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-16 05:54:05,425: INFO: _internal: 127.0.0.1 - - [16/May/2024 05:54:05] "GET / HTTP/1.1" 200 -]
+[2024-05-16 05:55:55,080: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "c:\users\asus\kidney-disease-classification\src\cnnClassifier\pipelines\prediction.py", line 17, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2024-05-16 05:55:55,093: INFO: _internal: 127.0.0.1 - - [16/May/2024 05:55:55] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-05-16 05:57:00,222: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.106:8080]
+[2024-05-16 05:57:00,222: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-16 05:57:14,740: INFO: _internal: 127.0.0.1 - - [16/May/2024 05:57:14] "GET / HTTP/1.1" 200 -]
+[2024-05-16 05:57:35,110: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "c:\users\asus\kidney-disease-classification\src\cnnClassifier\pipelines\prediction.py", line 17, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\Asus\anaconda3\envs\kidney\lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2024-05-16 05:57:35,117: INFO: _internal: 127.0.0.1 - - [16/May/2024 05:57:35] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-05-16 06:02:32,991: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.106:8080]
+[2024-05-16 06:02:32,991: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-16 06:02:38,376: INFO: _internal: 127.0.0.1 - - [16/May/2024 06:02:38] "GET / HTTP/1.1" 200 -]
+[2024-05-16 06:02:43,134: INFO: _internal: 127.0.0.1 - - [16/May/2024 06:02:43] "GET / HTTP/1.1" 200 -]
+[2024-05-16 06:02:55,233: INFO: _internal: 127.0.0.1 - - [16/May/2024 06:02:55] "POST /predict HTTP/1.1" 200 -]
+[2024-05-16 06:04:47,038: INFO: _internal: 127.0.0.1 - - [16/May/2024 06:04:47] "POST /predict HTTP/1.1" 200 -]
+[2024-05-16 06:05:01,488: INFO: _internal: 127.0.0.1 - - [16/May/2024 06:05:01] "POST /predict HTTP/1.1" 200 -]
